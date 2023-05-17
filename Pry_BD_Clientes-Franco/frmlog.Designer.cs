@@ -46,7 +46,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(198, 37);
+            this.txtUser.Location = new System.Drawing.Point(161, 41);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 20);
             this.txtUser.TabIndex = 1;
@@ -62,14 +62,14 @@
             // 
             // txtContra
             // 
-            this.txtContra.Location = new System.Drawing.Point(198, 110);
+            this.txtContra.Location = new System.Drawing.Point(161, 114);
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(100, 20);
             this.txtContra.TabIndex = 3;
             // 
             // btnInicar
             // 
-            this.btnInicar.Location = new System.Drawing.Point(223, 157);
+            this.btnInicar.Location = new System.Drawing.Point(186, 157);
             this.btnInicar.Name = "btnInicar";
             this.btnInicar.Size = new System.Drawing.Size(75, 23);
             this.btnInicar.TabIndex = 4;
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(362, 192);
+            this.ClientSize = new System.Drawing.Size(285, 192);
             this.Controls.Add(this.btnInicar);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.lbl2);

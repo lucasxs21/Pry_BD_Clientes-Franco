@@ -42,11 +42,16 @@
             this.clm9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.cmbPais = new System.Windows.Forms.ComboBox();
+            this.cmbCiudad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv
             // 
+            this.dgv.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clm,
@@ -60,9 +65,9 @@
             this.clm9,
             this.clm10,
             this.Fax});
-            this.dgv.Location = new System.Drawing.Point(12, 76);
+            this.dgv.Location = new System.Drawing.Point(12, 96);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(776, 362);
+            this.dgv.Size = new System.Drawing.Size(776, 351);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -139,11 +144,50 @@
             this.Fax.HeaderText = "Fax";
             this.Fax.Name = "Fax";
             // 
+            // lbl3
+            // 
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(24, 27);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(27, 13);
+            this.lbl3.TabIndex = 3;
+            this.lbl3.Text = "Pais";
+            // 
+            // lbl4
+            // 
+            this.lbl4.AutoSize = true;
+            this.lbl4.Location = new System.Drawing.Point(24, 67);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(40, 13);
+            this.lbl4.TabIndex = 5;
+            this.lbl4.Text = "Ciudad";
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.FormattingEnabled = true;
+            this.cmbPais.Location = new System.Drawing.Point(80, 27);
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(121, 21);
+            this.cmbPais.TabIndex = 7;
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.FormattingEnabled = true;
+            this.cmbCiudad.Location = new System.Drawing.Point(80, 67);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(121, 21);
+            this.cmbCiudad.TabIndex = 8;
+            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbCiudad);
+            this.Controls.Add(this.cmbPais);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl3);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.btnConect);
             this.Controls.Add(this.dgv);
@@ -152,6 +196,7 @@
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -171,5 +216,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clm9;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fax;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.ComboBox cmbPais;
+        private System.Windows.Forms.ComboBox cmbCiudad;
     }
 }
