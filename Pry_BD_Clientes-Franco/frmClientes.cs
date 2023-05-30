@@ -23,25 +23,7 @@ namespace Pry_BD_Clientes_Franco
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            try
-            {
-                miConexionBD = new OleDbConnection();
-                miConexionBD.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=NEPTUNO.accdb";
-                miConexionBD.Open();
-
-                btnConect.BackColor = Color.Green;
-            }
-            catch (Exception ex)
-            {
-                btnConect.Text = "Error";
-                btnConect.Text = ex.Message;
-                btnConect.BackColor = Color.Red;
-                
-               
-
-               
-            }
-        }
+            objBD.ConectarBaseDeDatos();
 
         private void clientes_Click(object sender, EventArgs e)
         {
