@@ -24,9 +24,10 @@ namespace Pry_BD_Clientes_Franco
                 if (txtContra.Text == "admin")
                 {
                     MessageBox.Show("acceso permitido");
-                    var frmClientes = new frmClientes();
+                    var frmClientes = new frmClientes();                   
                     frmClientes.Show();
-                    this.Close();
+                    this.Hide();
+                    
 
                 }
                 else
@@ -34,6 +35,25 @@ namespace Pry_BD_Clientes_Franco
                     MessageBox.Show("Error de datos");     
                 }
             }
+        }
+
+        private void frmlog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInicar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (txtUser.Text == "")
+            {                
+                
+               btnInicar.Location = new Point(36, 153);
+                
+                
+            }
+            
+
+            
         }
     }
 }

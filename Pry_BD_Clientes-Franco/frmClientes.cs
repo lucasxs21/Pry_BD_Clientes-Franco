@@ -13,52 +13,48 @@ namespace Pry_BD_Clientes_Franco
 {
     public partial class frmClientes : Form
     {
-        OleDbConnection miConexionBD;
-        OleDbCommand miComandoBD;
-        OleDbDataReader miLectorBD;
+        
         public frmClientes()
         {
             InitializeComponent();
         }
 
+       
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            objBD.ConectarBaseDeDatos();
+            Class1 Datos = new Class1();
+            Datos.CargarPaisCiudad(cmbCiudad, cmbPais, "NEPTUNO", "Clientes");
+
+        }
 
         private void clientes_Click(object sender, EventArgs e)
         {
-            try
-            {
-                miComandoBD = new OleDbCommand();
-
-                miComandoBD.Connection = miConexionBD;
-                miComandoBD.CommandType = CommandType.TableDirect;
-                miComandoBD.CommandText = "Clientes";
-
-                btnMostrar.BackColor = Color.Green;
-
-                miLectorBD = miComandoBD.ExecuteReader();
-
-                while (miLectorBD.Read())
-                {
-                                       
-                  dgv.Rows.Add(miLectorBD[0], miLectorBD[1], miLectorBD[2], miLectorBD[3], miLectorBD[4], miLectorBD[5], miLectorBD[6], miLectorBD[7], miLectorBD[8], miLectorBD[9], miLectorBD[10]);
-                    
-                }
-
-            }
-            catch (Exception ex)
-            {
-                btnMostrar.Text = "Error";
-                btnMostrar.BackColor = Color.Red;
-
-
-            }
+            Class1 Datos = new Class1();
+            Datos.ListarClientes(dgv, "NEPTUNO", "Clientes");
+            mrcFiltro.Enabled = true;
+                               
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Class1 Datos = new Class1();
+            Datos.ListarPais(dgv, "NEPTUNO", "Clientes", cmbPais, cmbCiudad);
+        }
+
+        private void cmbCiudad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Class1 Datos = new Class1();
+            Datos.ListarCiudad(dgv, "NEPTUNO", "Clientes", cmbCiudad, cmbPais);
         }
     }
 }

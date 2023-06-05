@@ -64,25 +64,27 @@
             // 
             this.txtContra.Location = new System.Drawing.Point(161, 114);
             this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '#';
             this.txtContra.Size = new System.Drawing.Size(100, 20);
             this.txtContra.TabIndex = 3;
             // 
             // btnInicar
             // 
-            this.btnInicar.Location = new System.Drawing.Point(186, 157);
+            this.btnInicar.Location = new System.Drawing.Point(186, 153);
             this.btnInicar.Name = "btnInicar";
             this.btnInicar.Size = new System.Drawing.Size(75, 23);
             this.btnInicar.TabIndex = 4;
             this.btnInicar.Text = "Iniciar";
             this.btnInicar.UseVisualStyleBackColor = true;
             this.btnInicar.Click += new System.EventHandler(this.btnInicar_Click);
+            this.btnInicar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnInicar_MouseMove);
             // 
             // frmlog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(285, 192);
+            this.ClientSize = new System.Drawing.Size(285, 188);
             this.Controls.Add(this.btnInicar);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.lbl2);
@@ -91,6 +93,7 @@
             this.Name = "frmlog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmlog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

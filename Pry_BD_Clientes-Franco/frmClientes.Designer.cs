@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.btnConect = new System.Windows.Forms.Button();
-            this.btnMostrar = new System.Windows.Forms.Button();
             this.clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,11 +40,14 @@
             this.clm9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clm10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnMostrar = new System.Windows.Forms.Button();
             this.lbl3 = new System.Windows.Forms.Label();
             this.lbl4 = new System.Windows.Forms.Label();
             this.cmbPais = new System.Windows.Forms.ComboBox();
             this.cmbCiudad = new System.Windows.Forms.ComboBox();
+            this.mrcFiltro = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.mrcFiltro.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
@@ -65,29 +66,11 @@
             this.clm9,
             this.clm10,
             this.Fax});
-            this.dgv.Location = new System.Drawing.Point(12, 96);
+            this.dgv.Location = new System.Drawing.Point(12, 123);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(776, 351);
+            this.dgv.Size = new System.Drawing.Size(1145, 351);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnConect
-            // 
-            this.btnConect.Location = new System.Drawing.Point(4, 1);
-            this.btnConect.Name = "btnConect";
-            this.btnConect.Size = new System.Drawing.Size(795, 10);
-            this.btnConect.TabIndex = 1;
-            this.btnConect.UseVisualStyleBackColor = true;
-            // 
-            // btnMostrar
-            // 
-            this.btnMostrar.Location = new System.Drawing.Point(713, 17);
-            this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
-            this.btnMostrar.TabIndex = 2;
-            this.btnMostrar.Text = "Mostrar";
-            this.btnMostrar.UseVisualStyleBackColor = true;
-            this.btnMostrar.Click += new System.EventHandler(this.clientes_Click);
             // 
             // clm
             // 
@@ -144,10 +127,20 @@
             this.Fax.HeaderText = "Fax";
             this.Fax.Name = "Fax";
             // 
+            // btnMostrar
+            // 
+            this.btnMostrar.Location = new System.Drawing.Point(233, 17);
+            this.btnMostrar.Name = "btnMostrar";
+            this.btnMostrar.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrar.TabIndex = 2;
+            this.btnMostrar.Text = "Mostrar";
+            this.btnMostrar.UseVisualStyleBackColor = true;
+            this.btnMostrar.Click += new System.EventHandler(this.clientes_Click);
+            // 
             // lbl3
             // 
             this.lbl3.AutoSize = true;
-            this.lbl3.Location = new System.Drawing.Point(24, 27);
+            this.lbl3.Location = new System.Drawing.Point(6, 22);
             this.lbl3.Name = "lbl3";
             this.lbl3.Size = new System.Drawing.Size(27, 13);
             this.lbl3.TabIndex = 3;
@@ -156,7 +149,7 @@
             // lbl4
             // 
             this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(24, 67);
+            this.lbl4.Location = new System.Drawing.Point(6, 67);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(40, 13);
             this.lbl4.TabIndex = 5;
@@ -165,45 +158,57 @@
             // cmbPais
             // 
             this.cmbPais.FormattingEnabled = true;
-            this.cmbPais.Location = new System.Drawing.Point(80, 27);
+            this.cmbPais.Location = new System.Drawing.Point(67, 19);
             this.cmbPais.Name = "cmbPais";
             this.cmbPais.Size = new System.Drawing.Size(121, 21);
             this.cmbPais.TabIndex = 7;
+            this.cmbPais.SelectedIndexChanged += new System.EventHandler(this.cmbPais_SelectedIndexChanged);
             // 
             // cmbCiudad
             // 
             this.cmbCiudad.FormattingEnabled = true;
-            this.cmbCiudad.Location = new System.Drawing.Point(80, 67);
+            this.cmbCiudad.Location = new System.Drawing.Point(67, 64);
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(121, 21);
             this.cmbCiudad.TabIndex = 8;
+            this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad_SelectedIndexChanged);
+            // 
+            // mrcFiltro
+            // 
+            this.mrcFiltro.Controls.Add(this.cmbCiudad);
+            this.mrcFiltro.Controls.Add(this.cmbPais);
+            this.mrcFiltro.Controls.Add(this.lbl4);
+            this.mrcFiltro.Controls.Add(this.lbl3);
+            this.mrcFiltro.Enabled = false;
+            this.mrcFiltro.Location = new System.Drawing.Point(33, 12);
+            this.mrcFiltro.Name = "mrcFiltro";
+            this.mrcFiltro.Size = new System.Drawing.Size(194, 100);
+            this.mrcFiltro.TabIndex = 10;
+            this.mrcFiltro.TabStop = false;
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmbCiudad);
-            this.Controls.Add(this.cmbPais);
-            this.Controls.Add(this.lbl4);
-            this.Controls.Add(this.lbl3);
+            this.ClientSize = new System.Drawing.Size(1183, 480);
+            this.Controls.Add(this.mrcFiltro);
             this.Controls.Add(this.btnMostrar);
-            this.Controls.Add(this.btnConect);
             this.Controls.Add(this.dgv);
             this.Name = "frmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "clientes ";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.mrcFiltro.ResumeLayout(false);
+            this.mrcFiltro.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Button btnConect;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm;
         private System.Windows.Forms.DataGridViewTextBoxColumn clm2;
@@ -220,5 +225,6 @@
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.ComboBox cmbPais;
         private System.Windows.Forms.ComboBox cmbCiudad;
+        private System.Windows.Forms.GroupBox mrcFiltro;
     }
 }
